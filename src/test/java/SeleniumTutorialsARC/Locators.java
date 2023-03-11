@@ -21,7 +21,7 @@ public class Locators {
 		// driver.findElement(By.xpath("//a[@href='https://signup.ebay.com/pa/crte?ru=https%3A%2F%2Fwww.ebay.com%2F']")).click();
 
 		// 1. Xpath
-		// Absolute xpath should not be used instaed only Relative xpath should be used
+		// Absolute xpath should not be used instead only Relative xpath should be used
 
 		// driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys("Laptop");
 

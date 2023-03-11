@@ -4,13 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 public class AdvanceXpathConcepts {
 	static WebDriver driver;
 
 	public static void main(String[] args) {
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		
 		//driver.get("https://demo.guru99.com/V1/index.php");
@@ -28,6 +30,7 @@ public class AdvanceXpathConcepts {
 		//driver.findElement(By.xpath("//label[text()='User-ID must not be blank']")).getText();//driver.get("https://demo.guru99.com/V1/index.php");
 		// 3. Contains + text()
 		//driver.findElement(By.xpath("//label[contains(text(),'Password must not')]")).getText();//driver.get("https://demo.guru99.com/V1/index.php");
+		
 		// 4. Starts-with
 		//driver.findElement(By.xpath("//a[starts-with(text(),'TATA')]")).getText();
 	    // 5. Dynamic Xpath
@@ -36,6 +39,7 @@ public class AdvanceXpathConcepts {
 		// 6. Indexing
 		//driver.findElement(By.xpath("(//a[text()='TCS']//parent::td//following-sibling::td)[4]"));//driver.get("https://www.nseindia.com/market-data/pre-open-market-cm-and-emerge-market");
 		//(a[text()='TCS']//parent::td//following-sibling::td)[5]
+		
 	    // 7. Xpath Axes
 		//7.1 Following: -Select all nodes that come after the current node
 		//driver.findElement(By.xpath("//input[@type='text']//following::input"));	//driver.get("https://demo.guru99.com/V1/index.php");	
