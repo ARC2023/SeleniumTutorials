@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
@@ -16,7 +17,9 @@ public class ActionClassMethods {
 	public static void main(String[] args) throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeOptions option = new ChromeOptions();
+        option.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		//driver.get("https://www.nseindia.com/");
 		
@@ -70,7 +73,7 @@ public class ActionClassMethods {
 		
 		driver.get(baseUrl);
 		WebElement txtUsername = driver.findElement(By.id("email"));
-
+		/*
 		Actions builder = new Actions(driver);
 		Action seriesOfActions = builder.moveToElement(txtUsername)
 			.click()
@@ -82,12 +85,13 @@ public class ActionClassMethods {
 			.build();
 			
 		seriesOfActions.perform() ;
+		*/
 		
 		// 8. Send Keys
 		
 		mouse.sendKeys(txtUsername, "Hello").build().perform();
-		mouse.sendKeys(txtUsername,Keys.ENTER);
-		
+		//mouse.sendKeys(txtUsername,Keys.ENTER).build().perform();
+		Thread.sleep(3000);
 		// 9. Scroll to element
 		mouse.scrollToElement(driver.findElement(By.xpath("//span[text()=' Meta © 2023']"))).build().perform();
 	}

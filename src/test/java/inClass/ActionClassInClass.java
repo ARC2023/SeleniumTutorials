@@ -5,6 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -14,8 +16,11 @@ static WebDriver driver;
 	public static void main(String[] args) {
 		
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+		ChromeOptions option = new ChromeOptions();
+        option.addArguments("--remote-allow-origins=*");
+		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
+		
 		//driver.get("https://www.nseindia.com/");
 		
 		// 1. Move to element / Hover along with click
@@ -53,7 +58,7 @@ static WebDriver driver;
 		
 		// 6. Drag and Drop - Traditional Way ( Move to element + ClickAndHold(Source) + Move to element(Target) + Release
 		
-		driver.get("https://jqueryui.com/droppable/");
+		/*driver.get("https://jqueryui.com/droppable/");
 		driver.switchTo().frame(0);
 		WebElement drag=driver.findElement(By.xpath("//p[text()='Drag me to my target']"));
 		WebElement drop=driver.findElement(By.xpath("//p[text()='Drop here']"));
@@ -62,10 +67,32 @@ static WebDriver driver;
 		
 		// 7. Drag and Drop - Direct Method Way
 		mouse.dragAndDrop(drag, drop).build().perform();
-		
+		*/
 		// 8. Scroll to element
 		
-		// 9. Action Builder
+		/*driver.get("https://www.facebook.com/");	
+		
+		WebElement element=driver.findElement(By.xpath("//span[text()=' Meta © 2023']"));
+		
+		mouse.scrollToElement(element).build().perform();
+		*/
+		
+		
+		// 9. Action Builder + KeyUp + KeyDown
+		driver.get("https://www.facebook.com/");	
+		WebElement emailOption=driver.findElement(By.id("email"));
+		Actions actor= new Actions(driver);
+		Action performMouseTask = actor.
+				moveToElement(emailOption)
+				.click()
+				.keyDown(emailOption, Keys.SHIFT)
+				.sendKeys(emailOption, "hello")
+				.keyUp(emailOption, Keys.SHIFT)
+				.doubleClick(emailOption)
+				.contextClick()
+				.build();
+		
+		performMouseTask.perform();
 		
 	}
 
