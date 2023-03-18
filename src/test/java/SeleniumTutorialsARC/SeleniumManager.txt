@@ -1,0 +1,13 @@
+"Selenium: now with batteries included!!!"
+
+Finally browser drivers executable binaries are part of Selenium library now, 
+its a build-in feature available in 4.6.0 version.
+
+- No need to use System.setProperty("webdriver.chrome.driver", "executable path 
+  of binary").
+- No need to use WebDriverManager.chromedriver().setup().
+- Directly use: WebDriver driver = new ChromeDriver();
+- No need to setup any environment variables for binaries/executables.
+- This feature is available for Java, .NET, Python, Ruby, and JavaScript
+  bindings as well as the Grid and Internet Explorer Driver.
+- Implementation of Selenium Manager across bindings.

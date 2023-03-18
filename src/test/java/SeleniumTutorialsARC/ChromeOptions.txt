@@ -1,0 +1,21 @@
+-->What is ChromeOptions and why it is used? How to use and where to use?
+-->ChromeOption is separate in selenium which will help to manage options 
+specific to Chrome Driver
+--> ChromeOptions is class extends Mutual Capability
+--> It was introduced after 3.6
+--> We can use desireCapability with merge method
+--> desireCapability is deprecated
+
+Syntax --> 
+
+ChromeOptions chro= new ChromeOptions();
+
+To add new extension
+chro.addExtensions(new File("Path"));
+
+To add Binary path 
+chro.setBinary(new File("Path"));
+
+TO accept untrusted certificate
+chro.setAcceptInsecureCerts(true);
+
