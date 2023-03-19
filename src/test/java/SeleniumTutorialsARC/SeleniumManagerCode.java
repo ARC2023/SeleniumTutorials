@@ -3,7 +3,7 @@ package SeleniumTutorialsARC;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.manager.SeleniumManager;
+//import org.openqa.selenium.manager.SeleniumManager;
 
 
 
@@ -11,7 +11,7 @@ public class SeleniumManagerCode {
 
 	public static void main(String[] args) {
 		
-		System.out.println(SeleniumManager.getInstance().getDriverPath("chromedriver"));
+		//System.out.println(SeleniumManager.getInstance().getDriverPath("chromedriver"));
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--remote-allow-origins=*");
 		WebDriver driver = new ChromeDriver(option);

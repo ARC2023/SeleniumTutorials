@@ -21,6 +21,10 @@ public class JavaScriptExecutorMethods {
 		driver.get("https://www.naukri.com/");
 		WebElement ele = driver.findElement(By.xpath("//a[text()='Login']"));
 		getElementInnerText(driver, ele);
+		flashing(ele, driver);
+		
+		
+		
 		/*
 		hideElement(driver, ele);
 		modifyElement(driver, ele, "SignUp");
@@ -47,7 +51,25 @@ public class JavaScriptExecutorMethods {
 		retriveInnerTextOfPage(driver);*/
 
 	}
+	
+	public static void flashing(WebElement etr, WebDriver driver) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String backGroundColor= etr.getCssValue("backgroundColor");
+		System.out.println("BackGround Color of Element -->"+backGroundColor);
+		for(int i=0;i<10;i++) {
+			colorChange(etr, driver, "rgb(0,200,21)");
+			colorChange(etr, driver, backGroundColor);
+		}
+	}
+	
+	public static void colorChange(WebElement etr, WebDriver driver,String color) throws InterruptedException {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.backgroundColor='"+color+"'", etr);		
+		Thread.sleep(1000);
+	}
 
+	
+	
 	public static void borderCreation(WebElement etr, WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.border='10px solid red'", etr);
@@ -73,14 +95,14 @@ public class JavaScriptExecutorMethods {
 		js.executeScript("history.go(0)");
 	}
 
-	public static void getTitle(WebDriver driver) {
+	public static void getURL(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Title of page by one way-->" + js.executeScript("return document.URL;").toString());
 		String title = (String) js.executeScript("return document.URL;");
 		System.out.println("Title of page by other way-->" + title);
 	}
 
-	public static void getURL(WebDriver driver) {
+	public static void getTitle(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("URL of page by one way-->" + js.executeScript("return document.title;").toString());
 		String title = (String) js.executeScript("return document.title;");

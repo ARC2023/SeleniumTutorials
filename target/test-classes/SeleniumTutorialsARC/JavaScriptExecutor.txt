@@ -1,15 +1,21 @@
 1. To Highlight an Element
-2. To close a pop-up using JavaScript
+2. To DrawBorder around an Element
 3. To Generate custom Alert during Test Execution
-4. To Click on an Element by using JaveScript
+4. To close a pop-up using JavaScript
 5. To Refresh browser by using JavaScript
 6. To Get Title by using JavaScript
-7. To Get InnerText of page by using JavaScript
+7. To retrieve the URL using JavaScript
 8. To Scroll Into View and Scroll Page Down
+9. To Click on an Element by using JaveScript
+
+
+4. 
+6. 
+7. To Get InnerText of page by using JavaScript
+8. 
 9. To enter a value into a field
 10. To wait for an element to become visible on the web page
-11. To retrieve the URL using JavaScript
+11. 
 12. To retrieve the value of an element using JavaScript
 13. To change the text of an element using JavaScript
 14. To hide an element using JavaScript
-15. To DrawBorder around an Element

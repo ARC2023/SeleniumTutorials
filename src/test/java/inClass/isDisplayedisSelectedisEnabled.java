@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class isDisplayedisSelectedisDisabled {
+public class isDisplayedisSelectedisEnabled {
 
 	public static void main(String[] args) {
 
@@ -20,16 +20,21 @@ public class isDisplayedisSelectedisDisabled {
 		WebDriver driver = new ChromeDriver(option);
 		driver.get("http://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
 		
-		WebElement options=driver.findElement(By.xpath("//input[@value='option-2']/.."));
-		WebElement options1=driver.findElement(By.xpath("//input[@value='option-2']"));
-		WebElement options2=driver.findElement(By.xpath("//input[@value='option-3']"));
-		WebElement options3=driver.findElement(By.xpath("//input[@value='cabbage']"));
+		
+		WebElement ele1=driver.findElement(By.xpath("//input[@value='option-2']/.."));
+		WebElement ele2=driver.findElement(By.xpath("//input[@value='option-2']"));
+		WebElement ele3=driver.findElement(By.xpath("//input[@value='option-3']"));
+		WebElement ele4=driver.findElement(By.xpath("//input[@value='cabbage']"));
+		WebElement ele5=driver.findElement(By.xpath("//input[@value='pumpkin']"));
 		
 		
-		System.out.println(options.isDisplayed());
-		System.out.println(options1.isSelected());
-		System.out.println(options2.isSelected());
-		System.out.println(options3.isEnabled());
+		
+		System.out.println(ele1.isDisplayed());
+		System.out.println(ele2.isSelected());
+		System.out.println(ele3.isSelected());
+		System.out.println(ele4.isEnabled());
+		System.out.println(ele5.isEnabled());
+		System.out.println(ele5.isSelected());
 		
 	}
 

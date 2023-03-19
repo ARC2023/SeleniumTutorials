@@ -1,4 +1,4 @@
-package SeleniumTutorialsARC;
+package inClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ScreenShots {
-static WebDriver driver ;
+public class ScreenShotFunctionality {
+static WebDriver driver;
 	public static void main(String[] args) throws Exception {
 		ChromeOptions option = new ChromeOptions();
 		option.addArguments("--start-maximized");
@@ -22,16 +22,22 @@ static WebDriver driver ;
 		 driver = new ChromeDriver(option);
 		driver.get("https://www.naukri.com/");
 		Thread.sleep(2000);
-		takeScreenShot("Naukri Login Page");
+		captureScreenShot("Login Page At Naukri.com");
+		
+
+	}
+	
+	
+	public static void captureScreenShot(String FileName) throws IOException {
+		
+		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File destFile= new File("C:\\CloningWorkSpace\\Selenium\\ScreenShots\\"+FileName+".jpg");		
+		FileUtils.copyFile(srcFile, destFile);
+		System.out.println("Screen Shot Taken for -->"+FileName);
+		
+		
 		
 	}
 	
-	public static void takeScreenShot(String fileName) throws IOException {
-		
-		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File desFile= new File("C:\\CloningWorkSpace\\Selenium\\ScreenShots\\"+fileName+".jpg");
-		FileUtils.copyFile(srcFile, desFile);
-		System.out.println("Screen Shot Taken");
-	}
 
 }
