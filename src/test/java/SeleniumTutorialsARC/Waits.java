@@ -23,7 +23,7 @@ public class Waits {
 		option.addArguments("--remote-allow-origins=*");
 		WebDriver driver = new ChromeDriver(option);
 
-	//driver.get("https://www.naukri.com/");
+	driver.get("https://www.naukri.com/");
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		//WebDriverWait wait= new WebDriverWait(driver, 200);
