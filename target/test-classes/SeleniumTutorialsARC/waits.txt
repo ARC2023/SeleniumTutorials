@@ -1,0 +1,29 @@
+What do you mean by synchronizaton in Selenium?
+--> Asking about Selenium Web Driver Waits
+
+1. Implicit Wait: -
+The Implicit Wait in Selenium is used to tell the web driver to wait for a 
+certain amount of time before it throws a “No Such Element Exception”. 
+The default setting is 0. Once we set the time, the web driver will wait for
+the element for that time before throwing an exception.
+
+It is always applied globally - is available for all webelement.
+
+In the below example we have declared an implicit wait with the time frame
+ of 10 seconds. It means that if the element is not located on the web page
+  within that time frame, it will throw an exception.
+e.g.: -driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+To declare implicit wait in Selenium WebDriver:
+
+Implicit Wait syntax:
+driver.manage().timeouts().implicitlyWait(TimeOut, TimeUnit.SECONDS);
+
+2. Explicit Wait: -
+The Explicit Wait in Selenium is used to tell the Web Driver to wait for certain 
+conditions (Expected Conditions) or maximum time exceeded before throwing 
+“ElementNotVisibleException” exception. It is an intelligent kind of wait, but it 
+can be applied only for specified elements. It gives
+ better options than implicit wait as it waits for dynamically loaded Ajax elements.
+
+3. Static Wait

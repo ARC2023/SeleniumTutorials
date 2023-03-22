@@ -1,6 +1,7 @@
 package SeleniumTutorialsARC;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -142,6 +143,14 @@ public class JavaScriptExecutorMethods {
 	public static void hideElement(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.display='none';", element);
+	}
+	
+	public static void hideElement(WebDriver driver, List<WebElement> element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;		
+		for(WebElement ele:element) {
+		js.executeScript("arguments[0].style.display='none';", ele);
+		System.out.println("Mission Done");
+		}
 	}
 
 	public static void modifyElement(WebDriver driver, WebElement element, String value) {

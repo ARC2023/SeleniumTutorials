@@ -7,15 +7,11 @@
 7. To retrieve the URL using JavaScript
 8. To Scroll Into View and Scroll Page Down
 9. To Click on an Element by using JaveScript
-
-
-4. 
-6. 
-7. To Get InnerText of page by using JavaScript
-8. 
-9. To enter a value into a field
-10. To wait for an element to become visible on the web page
-11. 
+10. To Get InnerText of page by using JavaScript
+11. To enter a value into a field
 12. To retrieve the value of an element using JavaScript
 13. To change the text of an element using JavaScript
 14. To hide an element using JavaScript
+15. To wait for an element to become visible on the web page
+16. To retrieve the inner text of an element using JavaScript
+
