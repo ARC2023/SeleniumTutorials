@@ -27,10 +27,10 @@ public class Locators {
 
 		// 2. id
 
-		driver.findElement(By.id("nav-link-accountList-nav-line-1")).click();
+		//driver.findElement(By.id("nav-link-accountList-nav-line-1")).click();
 
 		// 3. Link Text (a tag is used for links)
-		driver.findElement(By.linkText("Create your Amazon account")).click();
+		//driver.findElement(By.linkText("Create your Amazon account")).click();
 
 		// 4. partial link text
 		// driver.findElement(By.partialLinkText("Sign")).click();
@@ -40,12 +40,13 @@ public class Locators {
 		// driver.findElement(By.className("input_error form_input").click();
 
 		// 6. CSS Selector
-		// Rule if id is present then css selector is --> #{id}
+		// Rule 
+		//if id is present then css selector is --> #{id}
 		// if class is present then css selector is --> .{class}
 		// driver.findElement(By.cssSelector("#gh-p-1 > a")).click();
 
 		// 7. Name
-		// driver.findElement(By.name("businessName")).sendKeys("Alpha");
+		 driver.findElement(By.name("field-keywords")).sendKeys("Alpha");
 
 	}
 

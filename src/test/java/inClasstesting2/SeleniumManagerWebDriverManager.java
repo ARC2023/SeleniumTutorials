@@ -1,4 +1,4 @@
-package inClass;
+package inClasstesting2;
 
 import java.util.Arrays;
 
@@ -21,8 +21,7 @@ public class SeleniumManagerWebDriverManager {
 			//WebDriver driver= new ChromeDriver(option);
 		
 WebDriver driver=WebDriverManager.chromedriver().capabilities(option).create();
-		
-		
+		//WebDriver driver=WebDriverManager.chromedriver().create();		
 		driver.get("https://www.naukri.com/");
 		System.out.println(driver.getCurrentUrl());
 

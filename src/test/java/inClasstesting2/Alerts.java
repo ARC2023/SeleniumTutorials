@@ -1,4 +1,4 @@
-package inClass;
+package inClasstesting2;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

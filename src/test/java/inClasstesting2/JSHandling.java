@@ -1,4 +1,4 @@
-package inClass;
+package inClasstesting2;
 
 import java.util.Arrays;
 import org.openqa.selenium.By;

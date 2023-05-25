@@ -1,4 +1,4 @@
-package inClass;
+package inClasstesting2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -72,7 +72,7 @@ static WebDriver driver;
 		
 		/*driver.get("https://www.facebook.com/");	
 		
-		WebElement element=driver.findElement(By.xpath("//span[text()=' Meta © 2023']"));
+		WebElement element=driver.findElement(By.xpath("//span[text()=' Meta ï¿½ 2023']"));
 		
 		mouse.scrollToElement(element).build().perform();
 		*/
