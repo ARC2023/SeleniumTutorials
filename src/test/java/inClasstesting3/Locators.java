@@ -48,7 +48,7 @@ public class Locators {
 		// 5. Partial linktext
 		
 		WebElement PartiallinkText = driver.findElement(By.partialLinkText("Sign "));
-		PartiallinkText.click();*/
+		PartiallinkText.click();
 		
 		// 6. Xpath
 		
@@ -87,6 +87,59 @@ public class Locators {
 		//input[contains(@id,'user')]
 		//input[contains(@id,'pass')]
 		//h4[contains(text(),'Pass')]
+		*/
+		// e. Starts-with
+		driver.get("https://www.nseindia.com/market-data/pre-open-market-cm-and-emerge-market");
+		List<WebElement> ele= driver.findElements(By.xpath("//a[starts-with(text(),'TATA')]"));
+				
+		for(WebElement temp:ele) {
+			
+			System.out.println("TATA Group Companies-->"+temp);
+		}
+		
+		// 7. Xpath Axes
+		//7.1 Following: -Select all nodes that come after the current node
+		driver.get("https://demo.guru99.com/V1/index.php");	
+		
+		//input[@name="uid"]//following::input
+		
+		//7.2 Preceding: -Select all nodes that come before the current node
+				//driver.findElement(By.xpath("input[@type='reset']//preceding::input"));
+				// driver.get("https://demo.guru99.com/V1/index.php");
+				
+				//7.3 Following (with -sibling): -Select the following siblings of the context node. 
+				//Siblings are at the same level of the current nod. It will find the element after the current node.
+				//driver.findElement(By.xpath("//input[@type='submit']//following-sibling::input"));
+				// driver.get("https://demo.guru99.com/V1/index.php");
+				//7.4 Preceding (with -sibling): -Select the preceding siblings of the context node. Siblings are at the same level of the current nod. It will find the element before the current node.
+				//driver.findElement(By.xpath("//input[@type='reset']//preceding-sibling::input"));
+				// driver.get("https://demo.guru99.com/V1/index.php");	
+				
+		//7.5 Parent: -Selects the parent of the current node.
+		
+		
+		
+		
+		List<WebElement> ele22 = driver.findElements(By.xpath("//table[@id='livePreTable']//tbody//tr"));
+				
+		String str1="//table[@id='livePreTable']//tbody//tr[";
+		String str2 = "]//td[2]//a";
+		
+		       
+		for(int i=0;i<ele22.size();i++) {
+			
+			String xpathExp=str1+i+str2;
+			
+			WebElement rows=driver.findElement(By.xpath(xpathExp));
+			
+			String value=rows.getText();
+			
+			
+			if(value.equals("TCS")) {
+				
+				
+			}
+		}
 		
 		
 	}
