@@ -73,27 +73,30 @@ public class ActionClassMethods {
 		
 		driver.get(baseUrl);
 		WebElement txtUsername = driver.findElement(By.id("email"));
-		/*
+		
 		Actions builder = new Actions(driver);
-		Action seriesOfActions = builder.moveToElement(txtUsername)
+		//Action seriesOfActions = 
+				builder.moveToElement(txtUsername)
 			.click()
 			.keyDown(txtUsername, Keys.SHIFT)
 			.sendKeys(txtUsername, "hello")
 			.keyUp(txtUsername, Keys.SHIFT)
 			.doubleClick(txtUsername)
 			.contextClick()
-			.build();
+			.build().perform();
 			
-		seriesOfActions.perform() ;
-		*/
+		//seriesOfActions.perform() ;
+		
 		
 		// 8. Send Keys
 		
 		mouse.sendKeys(txtUsername, "Hello").build().perform();
 		//mouse.sendKeys(txtUsername,Keys.ENTER).build().perform();
 		Thread.sleep(3000);
+		
+		
 		// 9. Scroll to element
-		mouse.scrollToElement(driver.findElement(By.xpath("//span[text()=' Meta © 2023']"))).build().perform();
+		mouse.scrollToElement(driver.findElement(By.xpath("//span[text()=' Meta ï¿½ 2023']"))).build().perform();
 	}
 
 }

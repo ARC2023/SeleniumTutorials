@@ -1,6 +1,5 @@
-package SeleniumTutorialsARC;
+package inClasstesting3;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,50 +7,59 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-public class JavaScriptExecutorMethods {
+public class JavaScriptExecutor {
 
 	public static void main(String[] args) throws InterruptedException {
-		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--start-maximized");
-		option.addArguments("--incognito");
-		option.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking", "enable-automation"));
-		option.addArguments("--remote-allow-origins=*");
-		WebDriver driver = new ChromeDriver(option);
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
 		driver.get("https://www.naukri.com/");
-		WebElement ele = driver.findElement(By.xpath("//a[text()='Login']"));
-		/*getElementInnerText(driver, ele);
-		flashing(ele, driver);		
-		hideElement(driver, ele);
-		modifyElement(driver, ele, "SignUp");
-		borderCreation(ele, driver);
+		Thread.sleep(3000);
+		WebElement loginBtn= driver.findElement(By.id("login_Layer"));		
+		//borderCreation(loginBtn, driver);
+		//flashing(loginBtn, driver);
+		//generateAlert(driver, "Test case Passed");
+		//clickOnElement(loginBtn, driver);
+		//Thread.sleep(3000);
+		//WebElement username=driver.findElement(By.xpath("(//input[@class='suggestor-input '])[1]"));
+		//enterValueInTextBox(username, driver, "arcautomation2023@gmail.com");
+		//Thread.sleep(3000);
+		//refreshPageJS(driver);
+		
+		//System.out.println(driver.getCurrentUrl());
+		//System.out.println(driver.getTitle());
+		
+		//getURL(driver);
+		//getTitle(driver);
+		/*WebElement viewAll=driver.findElement(By.linkText("View all companies"));
 		Thread.sleep(3000);
 		scrollToHeight(driver);
-		Thread.sleep(3000);*/
-		WebElement search = driver.findElement(By.xpath("//div[text()='Search']"));
-		scrollToElement(driver, search);
 		Thread.sleep(3000);
-		clickOnElement(search, driver);
+		scrollToElement(driver, viewAll);
 		Thread.sleep(3000);
+		clickOnElement(viewAll, driver);*/
+		/*clickOnElement(loginBtn, driver);
 		WebElement UN = driver.findElement(By.xpath("//label[text()='Email ID / Username']//following-sibling::input"));
-		clickOnElement(ele, driver);
 		enterValueInTextBox(UN, driver, "arcautomation2023@gmail.com");
 		Thread.sleep(3000);
-		retrieveValueOfElement(driver, UN);
-		Thread.sleep(3000);
-		generateAlert(driver, "Defect Defect Defect");
-		driver.switchTo().alert().accept();
-		refreshPageJS(driver);
-		getTitle(driver);
-		getURL(driver);
-		retriveInnerTextOfPage(driver);
-
+		retrieveValueOfElement(driver, UN);*/
+		
+		//hideElement(driver, loginBtn);
+		//clickOnElement(loginBtn, driver);
+		getElementInnerText(driver, loginBtn);
+		modifyElement(driver, loginBtn, "Sign In");
+		
 	}
 	
+	
+	public static void borderCreation(WebElement etr, WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;		
+		js.executeScript("arguments[0].style.border='5px solid blue'", etr);
+		
+		
+	}
 	public static void flashing(WebElement etr, WebDriver driver) throws InterruptedException {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		String backGroundColor= etr.getCssValue("backgroundColor");
+		String backGroundColor= etr.getCssValue("backgroundColor");		
 		System.out.println("BackGround Color of Element -->"+backGroundColor);
 		for(int i=0;i<10;i++) {
 			colorChange(etr, driver, "rgb(200,20,81)");
@@ -65,33 +73,29 @@ public class JavaScriptExecutorMethods {
 		Thread.sleep(1000);
 	}
 
-	
-	
-	public static void borderCreation(WebElement etr, WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].style.border='10px solid red'", etr);
-	}
 
 	public static void generateAlert(WebDriver driver, String message) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("alert('" + message + "');");
 	}
-
+	
 	public static void clickOnElement(WebElement element, WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", element);
 	}
-
+	
 	public static void enterValueInTextBox(WebElement element, WebDriver driver, String UN) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].value='" + UN + "';", element);
 	}
-
+	public static void enterValueInTextBox(WebElement element, String UN) {
+		element.sendKeys(UN);
+	
+	}
 	public static void refreshPageJS(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("history.go(0)");
 	}
-
 	public static void getURL(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		System.out.println("Title of page by one way-->" + js.executeScript("return document.URL;").toString());
@@ -105,15 +109,7 @@ public class JavaScriptExecutorMethods {
 		String title = (String) js.executeScript("return document.title;");
 		System.out.println("URL of page by other way-->" + title);
 	}
-
-	public static void retriveInnerTextOfPage(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		System.out.println("Inner Text of page by one way-->"
-				+ js.executeScript("return document.documentElement.innerText;").toString());
-		String title = (String) js.executeScript("return document.documentElement.innerText;");
-		System.out.println("Inner Text of page by other way-->" + title);
-	}
-
+	
 	public static void scrollToHeight(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -123,19 +119,14 @@ public class JavaScriptExecutorMethods {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
 	}
-
+	
 	public static String retrieveValueOfElement(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String value = (String) js.executeScript("return arguments[0].value;", element);
 		System.out.println("Value from Element-->" + value);
 		return value;
 	}
-
-	public static void closeAlert(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.close();");
-	}
-
+	
 	public static void hideElement(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.display='none';", element);
@@ -148,7 +139,6 @@ public class JavaScriptExecutorMethods {
 		System.out.println("Mission Done");
 		}
 	}
-
 	public static void modifyElement(WebDriver driver, WebElement element, String value) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].innerText = '" + value + "';", element);
@@ -158,12 +148,4 @@ public class JavaScriptExecutorMethods {
 		String innerText = (String) ((JavascriptExecutor) driver).executeScript("return arguments[0].textContent;", element);
 		System.out.println("Inner Text of Element"+innerText);
 	}
-	public static void waitForAnElement(WebDriver driver, WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("var callback = arguments[arguments.length - 1];" + "var interval = setInterval(function() {"
-				+ "if (arguments[0].offsetHeight > 0) {" + "clearInterval(interval);" + "callback();" + "}"
-				+ "}, 100);", element);
-	}
-	
-
 }
