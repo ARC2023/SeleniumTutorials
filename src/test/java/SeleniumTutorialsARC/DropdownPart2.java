@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class MultipleDropdownSelect {
+public class DropdownPart2 {
 	static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
@@ -25,7 +25,7 @@ public class MultipleDropdownSelect {
 		months.selectByVisibleText("November");
 		Thread.sleep(2000);
 		System.out.println(months.isMultiple());
-
+		
 		List<WebElement> monthList = months.getAllSelectedOptions();
 		for (WebElement ele : monthList) {
 			System.out.println("Selected Value-->" + ele.getText());

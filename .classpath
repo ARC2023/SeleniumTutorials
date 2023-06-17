@@ -56,5 +56,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/glend/Downloads/selenium-server-4.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/glend/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.73/tomcat-embed-core-9.0.73.jar" sourcepath="C:/Users/glend/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.73/tomcat-embed-core-9.0.73-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.apache.tomcat.embed"/>
+			<attribute name="maven.artifactId" value="tomcat-embed-core"/>
+			<attribute name="maven.version" value="9.0.73"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

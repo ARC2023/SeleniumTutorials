@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class AllAboutDropdowns {
+public class DropdownPart1 {
 	static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
@@ -24,6 +24,7 @@ public class AllAboutDropdowns {
 		WebElement day = driver.findElement(By.id("day"));
 		WebElement month = driver.findElement(By.id("month"));
 		WebElement year = driver.findElement(By.id("year"));
+		
 		List<WebElement> OptionsDays = driver.findElements(By.xpath("//select[@id='day']//option"));
 		List<WebElement> OptionsMonths = driver.findElements(By.xpath("//select[@id='month']//option"));
 		List<WebElement> OptionsYears = driver.findElements(By.xpath("//select[@id='year']//option"));
@@ -43,15 +44,19 @@ public class AllAboutDropdowns {
 		// years.selectByValue("1997");
 		// years.selectByIndex(30);
 		/*
-		  //Hard COded selectDropDownValue(day, "15"); selectDropDownValue(month,
-		  "Dec"); selectDropDownValue(year, "1993");
+		  //Hard Coded 
+		   selectDropDownValue(day, "15"); 
+		   selectDropDownValue(month, "Dec"); 
+		   selectDropDownValue(year, "1993");
 		  
 		  String dob="15-Feb-1991";
 		  
 		  String DOB[]=dob.split("-");
 		  
-		  //Dynamic value selectDropDownValue(day, DOB[0]); selectDropDownValue(month,
-		  DOB[1]); selectDropDownValue(year, DOB[2]);
+		  //Dynamic value 
+		   selectDropDownValue(day, DOB[0]); 
+		   selectDropDownValue(month,DOB[1]); 
+		   selectDropDownValue(year, DOB[2]);
 		
 		// GetOptions
 		List<WebElement> lister = days.getOptions();

@@ -25,7 +25,7 @@ public class Waits {
 
 	driver.get("https://www.naukri.com/");
 		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		//WebDriverWait wait= new WebDriverWait(driver, 200);
 		
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(1));
