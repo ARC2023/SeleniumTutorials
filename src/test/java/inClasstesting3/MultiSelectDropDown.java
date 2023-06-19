@@ -23,6 +23,7 @@ public class MultiSelectDropDown {
 		months.selectByValue("May");
 		months.selectByIndex(3);
 		months.selectByVisibleText("July");
+		
 		Thread.sleep(5000);
 		List<WebElement> lister=months.getAllSelectedOptions();
 		for(WebElement ele:lister) {

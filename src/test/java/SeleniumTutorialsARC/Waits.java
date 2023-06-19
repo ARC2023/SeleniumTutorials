@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -22,36 +23,44 @@ public class Waits {
 		option.setExperimentalOption("excludeSwitches", Arrays.asList("disable-popup-blocking", "enable-automation"));
 		option.addArguments("--remote-allow-origins=*");
 		WebDriver driver = new ChromeDriver(option);
-
-	driver.get("https://www.naukri.com/");
-		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(20));
+		driver.get("https://www.naukri.com/");
+		/*driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		//WebDriverWait wait= new WebDriverWait(driver, 200);
-		
+		/*
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(1));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 		System.out.println(driver.getTitle());
 		
-		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(20));
+		
 		
 		//1. Visibility		
-		//wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("login_Layer")))).click();
-		//System.out.println(wait.until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//div[@class='ntc__chips-row']")))).size());
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='login_Layer']"))).click();
-		//System.out.println(wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='ntc__chips-row']"))).size());
-		/*driver.get("https://www.nseindia.com/");
-		driver.findElement(By.xpath("//a[text()='Market Data']")).click();
-		driver.findElement(By.xpath("//a[text()='Pre-Open Market']")).click();		
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("login_Layer")))).click();
+		System.out.println(wait.until(ExpectedConditions.visibilityOfAllElements(
+				driver.findElements(By.xpath("//div[@class='ntc__chips-row']")))).size());
 		
-		System.out.println(wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(By.xpath("//table[@id='livePreTable']"), By.xpath("//td//a"))).size());
-		System.out.println(wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(driver.findElement(By.id("livePreTable")),By.xpath("//td//a"))).size());
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='login_Layer']"))).click();
+		System.out.println(wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+				By.xpath("//div[@class='ntc__chips-row']"))).size());
+		
+		driver.get("https://www.nseindia.com/");
+		driver.findElement(By.xpath("//a[text()='Market Data']")).click();
+		WebElement ty=driver.findElement(By.xpath("//a[text()='Pre-Open Market']"));
+		wait.until(ExpectedConditions.visibilityOf(ty)).click();		
+		
+		System.out.println(wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(
+				By.xpath("//table[@id='livePreTable']"), By.xpath("//td//a"))).size());
+		System.out.println(wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(
+				driver.findElement(By.id("livePreTable")),By.xpath("//td//a"))).size());
+		*/
 		
 		//2. Invisibility
 		System.out.println(wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("login_Layer")))));
 		System.out.println(wait.until(ExpectedConditions.invisibilityOfAllElements(driver.findElements(By.xpath("//div[@class='ntc__chips-row']")))));
 		System.out.println(wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("login_Layer"))));
 		System.out.println(wait.until(ExpectedConditions.invisibilityOfElementWithText(By.id("login_Layer"),"Login")));
-		
+		/*
 		// 3. Alerts
 		driver.get("https://demo.guru99.com/test/delete_customer.php");
 		driver.findElement(By.xpath("//input[@name='cusid']")).sendKeys("Niks");
