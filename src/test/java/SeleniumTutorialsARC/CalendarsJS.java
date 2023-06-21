@@ -23,9 +23,9 @@ public class CalendarsJS {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 		System.out.println(driver.getTitle());
 		
-		WebElement dateEleFrom= driver.findElement(By.xpath("(//div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar'])[1]"));
+		WebElement dateEleFrom= driver.findElement(By.xpath("//*[@id='main-container']/div/div[1]/div[3]/div[2]/div[4]/div/div/div[1]/div[2]/div[1]"));
 		WebElement dateEleTo= driver.findElement(By.xpath("(//div[@class='css-76zvg2 css-bfa6kz r-homxoj r-ubezar'])[2]"));
-		
+		driver.findElement(By.xpath("//*[@id='main-container']/div/div[1]/div[3]/div[2]/div[4]/div/div/div[1]/div[2]")).click();
 		dateByJS(driver, "Fri, 24 Mar 2023", dateEleFrom);
 		dateByJS(driver, "Fri, 31 Mar 2023", dateEleTo);
 		System.out.println("Entered Date");

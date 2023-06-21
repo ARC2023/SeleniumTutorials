@@ -36,7 +36,8 @@ public class CalendarsNonGeneric {
 		 * driver.findElement(By.id("first_date_picker")).sendKeys("09/09/2023");
 		 * driver.findElement(By.id("first_date_picker")).sendKeys(Keys.ENTER);
 		 */
-		selectDate("25", "March", "2020");
+		selectDate("31", "December", "2024");
+		//selectDate("19", "January", "2025");
 
 	}
 
@@ -67,11 +68,8 @@ public class CalendarsNonGeneric {
 				getMonthYear(monthYear)[1].equals(expYear))) {
 			if (Integer.parseInt(expYear) > Integer.parseInt(getMonthYear(monthYear)[1])) {
 				driver.findElement(By.xpath("//span[text()='Next']")).click();
-			} /*
-				 * else if (Integer.parseInt(expYear) ==
-				 * Integer.parseInt(getMonthYear(monthYear)[1])) {				 * 
-				 * }
-				 */ else if (Integer.parseInt(expYear) <= Integer.parseInt(getMonthYear(monthYear)[1])){
+			} 
+			else if (Integer.parseInt(expYear) <= Integer.parseInt(getMonthYear(monthYear)[1])){
 				driver.findElement(By.xpath("//span[text()='Prev']")).click();
 			}
 			monthYear = driver.findElement(By.className("ui-datepicker-title")).getText();
