@@ -105,15 +105,18 @@ public class Locators {
 		
 		//7.2 Preceding: -Select all nodes that come before the current node
 				//driver.findElement(By.xpath("input[@type='reset']//preceding::input"));
-				// driver.get("https://demo.guru99.com/V1/index.php");
+		// driver.get("https://demo.guru99.com/V1/index.php");
 				
-				//7.3 Following (with -sibling): -Select the following siblings of the context node. 
-				//Siblings are at the same level of the current nod. It will find the element after the current node.
-				//driver.findElement(By.xpath("//input[@type='submit']//following-sibling::input"));
-				// driver.get("https://demo.guru99.com/V1/index.php");
-				//7.4 Preceding (with -sibling): -Select the preceding siblings of the context node. Siblings are at the same level of the current nod. It will find the element before the current node.
-				//driver.findElement(By.xpath("//input[@type='reset']//preceding-sibling::input"));
-				// driver.get("https://demo.guru99.com/V1/index.php");	
+//7.3 Following (with -sibling): -Select the following siblings of the context node. 
+//Siblings are at the same level of the current nod. 
+//It will find the element after the current node.
+			//driver.findElement(By.xpath("//input[@type='submit']//following-sibling::input"));
+			// driver.get("https://demo.guru99.com/V1/index.php");
+//7.4 Preceding (with -sibling): -Select the preceding siblings of the context node. 
+//Siblings are at the same level of the current nod. 
+//It will find the element before the current node.
+			//driver.findElement(By.xpath("//input[@type='reset']//preceding-sibling::input"));
+			// driver.get("https://demo.guru99.com/V1/index.php");	
 				
 		//7.5 Parent: -Selects the parent of the current node.
 		
