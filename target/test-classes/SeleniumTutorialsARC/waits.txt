@@ -27,3 +27,4 @@ can be applied only for specified elements. It gives
  better options than implicit wait as it waits for dynamically loaded Ajax elements.
 
 3. Static Wait
+to wait for definite amount of time

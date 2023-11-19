@@ -36,7 +36,6 @@ public class FramesHandling {
 		System.out.println(sd);
 		driver.switchTo().parentFrame();
 		System.out.println(driver.findElement(By.xpath("//font[text()='THIS IS A DEMO PAGE FOR TESTING']")).isDisplayed());
-		
 		*/
 		//driver.switchTo().defaultContent();
 

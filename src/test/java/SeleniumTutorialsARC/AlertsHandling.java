@@ -43,7 +43,7 @@ public class AlertsHandling {
 		
 		// 5. How to upload files 
 		driver.get("https://html.com/input-type-file/");
-		driver.findElement(By.xpath("//input[@name='fileupload']")).sendKeys("C:\\Users\\mohda\\Downloads\\Selenium PDF.pdf");
+		driver.findElement(By.xpath("//input[@name='fileupload']")).sendKeys("");
 		
 		// 6. Handling Basic Authentication in popup alert
 		driver.get("https://the-internet.herokuapp.com/basic_auth");
